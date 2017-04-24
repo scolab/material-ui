@@ -146,6 +146,10 @@ class DropDownMenu extends Component {
      */
     menuStyle: PropTypes.object,
     /**
+     * Overrides the styles of `Popover` when the `DropDownMenu` is displayed.
+     */
+    popoverStyle: PropTypes.object,
+    /**
      * If true, `value` must be an array and the menu will support
      * multiple selections.
      */
@@ -370,6 +374,7 @@ class DropDownMenu extends Component {
       selectionRenderer,
       onClose, // eslint-disable-line no-unused-vars
       openImmediately, // eslint-disable-line no-unused-vars
+      popoverStyle,
       menuItemStyle,
       selectedMenuItemStyle,
       style,
@@ -463,6 +468,7 @@ class DropDownMenu extends Component {
           open={open}
           animated={animated}
           onRequestClose={this.handleRequestCloseMenu}
+          style={popoverStyle}
         >
           <Menu
             multiple={multiple}
